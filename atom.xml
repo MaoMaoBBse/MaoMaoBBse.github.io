@@ -6,7 +6,7 @@
   <link href="https://maomaobbse.github.io/atom.xml" rel="self"/>
   
   <link href="https://maomaobbse.github.io/"/>
-  <updated>2021-10-10T16:08:47.306Z</updated>
+  <updated>2021-10-13T16:13:47.074Z</updated>
   <id>https://maomaobbse.github.io/</id>
   
   <author>
@@ -17,11 +17,69 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>std::ifstream的成员函数seekg()失效问题</title>
+    <link href="https://maomaobbse.github.io/2021/10/13/std-ifstream%E7%9A%84%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0seekg-%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98/"/>
+    <id>https://maomaobbse.github.io/2021/10/13/std-ifstream%E7%9A%84%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0seekg-%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98/</id>
+    <published>2021-10-13T13:34:56.000Z</published>
+    <updated>2021-10-13T16:13:47.074Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="seekg-函数"><a href="#seekg-函数" class="headerlink" title="seekg()函数"></a>seekg()函数</h2><p>seekg()函数时标准库输入流内成员函数。可移动流的内置指针位置，用于指定从流的指定位置读取。</p><p>pos：绝对位置</p><p>dir：基准位置</p><p>off：为相对位置，相对于基准位置</p><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">basic_istream&amp; seekg( pos_type pos );basic_istream&amp; seekg( off_type off, std::ios_base::seekdir dir);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h2 id="std-ifstream-seekg-失效"><a href="#std-ifstream-seekg-失效" class="headerlink" title="std::ifstream.seekg()失效"></a>std::ifstream.seekg()失效</h2><ol><li><p>文尾失效：在std::fistream.eof()为true时，使用seekg()会失效。</p></li><li><p>玄学失效：有时使用seekg()时会有失效，在我的<a href="https://github.com/MaoMaoBbse/Maojson">Maojson</a>项目编写中遇到意外失效问题。</p></li></ol><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ol><li>文尾失效：可以建立新的对象来解决。</li><li>玄学失效：可以尝试在打开文件时使用二进制的方式。</li></ol><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">std::ifstream ifile(&quot;test.txt&quot;, std::ios::binary);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;seekg-函数&quot;&gt;&lt;a href=&quot;#seekg-函数&quot; class=&quot;headerlink&quot; title=&quot;seekg()函数&quot;&gt;&lt;/a&gt;seekg()函数&lt;/h2&gt;&lt;p&gt;seekg()函数时标准库输入流内成员函数。可移动流的内置指针位置，用于指定从流的指定位</summary>
+      
+    
+    
+    
+    <category term="笔记" scheme="https://maomaobbse.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="笔记" scheme="https://maomaobbse.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="C++" scheme="https://maomaobbse.github.io/tags/C/"/>
+    
+    <category term="std" scheme="https://maomaobbse.github.io/tags/std/"/>
+    
+    <category term="坑" scheme="https://maomaobbse.github.io/tags/%E5%9D%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++17 std::any 的使用方法</title>
+    <link href="https://maomaobbse.github.io/2021/10/12/C-17-std-any-%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/"/>
+    <id>https://maomaobbse.github.io/2021/10/12/C-17-std-any-%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</id>
+    <published>2021-10-12T15:57:35.000Z</published>
+    <updated>2021-10-13T16:14:32.051Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>std::any在C++17后加入标准库，主要用于代指任何类型的类型安全容器，用于替代C语言的void*。当你不清楚需要存储的数据是什么类型时，可以采用std::any存储。</p><hr><h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><h2 id="创建与赋值"><a href="#创建与赋值" class="headerlink" title="创建与赋值"></a>创建与赋值</h2><p>std::any拥有简单易用的拷贝构造和赋值函数，创建与赋值用起来还是很方便的。</p><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">std::any a1;  &#x2F;&#x2F; a1, 类型：无       值：空std::any a2 &#x3D; 1; &#x2F;&#x2F; a2, 类型：int     值：1std::any a3&#123;a2&#125;;&#x2F;&#x2F; a3, 类型：int     值：1a2 &#x3D; 1.1;        &#x2F;&#x2F; a2, 类型：double值：1.1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h2 id="获取存储的类型"><a href="#获取存储的类型" class="headerlink" title="获取存储的类型"></a>获取存储的类型</h2><p>使用成员函数type()可以获取存储的数据类型</p><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">std::any a1 &#x3D; 10;if(a1.type() &#x3D;&#x3D; typeid(int))&#123;std::cout &lt;&lt; &quot;a1 &#x3D; &quot; &lt;&lt; std::get&lt;int&gt;(a1) &lt;&lt; std::endl;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h2 id="获取存储的值"><a href="#获取存储的值" class="headerlink" title="获取存储的值"></a>获取存储的值</h2><p>使用std::get<type>(std::any)获取，如果类型错误会抛出异常。</p><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">std::any a1 &#x3D; 10;auto num &#x3D; std::get&lt;int&gt;(a1); &#x2F;&#x2F; num: 10auto&amp; num_r &#x3D; std::get&lt;int&amp;&gt;(a1); &#x2F;&#x2F; num_r: 10num_r &#x3D; 20; &#x2F;&#x2F; a1: 10<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;std::any在C++17后加入标准库，主要用于代指任何类型的类型安全容器，用于替代C语言的void*。当你不清楚需要存储的数据是什么类型</summary>
+      
+    
+    
+    
+    <category term="笔记" scheme="https://maomaobbse.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="笔记" scheme="https://maomaobbse.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="C++" scheme="https://maomaobbse.github.io/tags/C/"/>
+    
+    <category term="std" scheme="https://maomaobbse.github.io/tags/std/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Windows下cmake指定编译器</title>
     <link href="https://maomaobbse.github.io/2021/10/11/Windows%E4%B8%8Bcmake%E6%8C%87%E5%AE%9A%E7%BC%96%E8%AF%91%E5%99%A8/"/>
     <id>https://maomaobbse.github.io/2021/10/11/Windows%E4%B8%8Bcmake%E6%8C%87%E5%AE%9A%E7%BC%96%E8%AF%91%E5%99%A8/</id>
     <published>2021-10-10T16:01:23.000Z</published>
-    <updated>2021-10-10T16:08:47.306Z</updated>
+    <updated>2021-10-13T16:12:23.449Z</updated>
     
     <content type="html"><![CDATA[<p>由于有时在windows下做测试，遇到直接使用cmake默认不会使用 MinGW 作为编译器，导致后面使用make找不到makefile。这时需要在使用cmake指令时，格外指定一条参数 </p><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">cmake .. -G &quot;MinGw Makefiles&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
     
@@ -43,6 +101,8 @@
     
     <category term="踩坑" scheme="https://maomaobbse.github.io/tags/%E8%B8%A9%E5%9D%91/"/>
     
+    <category term="易错" scheme="https://maomaobbse.github.io/tags/%E6%98%93%E9%94%99/"/>
+    
   </entry>
   
   <entry>
@@ -50,7 +110,7 @@
     <link href="https://maomaobbse.github.io/2021/09/23/%E5%88%A9%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/"/>
     <id>https://maomaobbse.github.io/2021/09/23/%E5%88%A9%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</id>
     <published>2021-09-23T12:10:06.000Z</published>
-    <updated>2021-10-10T14:39:07.646Z</updated>
+    <updated>2021-10-13T16:11:28.551Z</updated>
     
     <content type="html"><![CDATA[<h1 id="hexo本地搭建环境"><a href="#hexo本地搭建环境" class="headerlink" title="hexo本地搭建环境"></a>hexo本地搭建环境</h1><img src="/2021/09/23/%E5%88%A9%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B%E5%9B%BE.jpg" class="" title="使用流程图" loading="lazy"><p>本地环境：Windows10</p><p>官网地址：<a href="https://nodejs.org/">https://nodejs.org/</a></p><h2 id="下载解压"><a href="#下载解压" class="headerlink" title="下载解压"></a>下载解压</h2><p>下载 nodejs 链接：<a href="https://nodejs.org/dist/v14.17.6/node-v14.17.6-win-x86.zip">https://nodejs.org/dist/v14.17.6/node-v14.17.6-win-x86.zip</a></p><img src="/2021/09/23/%E5%88%A9%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/%E4%B8%8B%E8%BD%BD.png" class="" loading="lazy"><p>解压，并选择好路径。这里我是用的(D:\nodejs)</p><img src="/2021/09/23/%E5%88%A9%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/%E5%AD%98%E6%94%BE%E8%B7%AF%E5%BE%84%E5%9B%BE.png" class="" loading="lazy"><h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><p>配置系统环境变量</p><img src="/2021/09/23/%E5%88%A9%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.png" class="" loading="lazy"><p>打开cmd检查下版本信息，如果没有请检查环境变量</p><img src="/2021/09/23/%E5%88%A9%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/cmd%E6%A3%80%E6%9F%A5%E7%89%88%E6%9C%AC.png" class="" loading="lazy"><h2 id="安装cnpm"><a href="#安装cnpm" class="headerlink" title="安装cnpm"></a>安装cnpm</h2><p>这里因为国内原因，使用淘宝源。在cmd输入：</p><pre class="line-numbers language-none"><code class="language-none">npm install -g cnpm --registry-https:&#x2F;&#x2F;registry.npm.taobao.org<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><img src="/2021/09/23/%E5%88%A9%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/%E5%AE%89%E8%A3%85cnpm.png" class="" loading="lazy"><h2 id="安装hexo-cli"><a href="#安装hexo-cli" class="headerlink" title="安装hexo-cli"></a>安装hexo-cli</h2><p>用cnpm安装hexo,这里我出现了条报错信息，与平台不匹配不清楚是什么原因导致，暂时不知道是否会对后期有什么影响。</p><pre class="line-numbers language-none"><code class="language-none">cnpm install -g hexo-cli<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><img src="/2021/09/23/%E5%88%A9%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8cnpm%E5%AE%89%E8%A3%85hexo.png" class="" loading="lazy"><h2 id="初始化博客文件夹"><a href="#初始化博客文件夹" class="headerlink" title="初始化博客文件夹"></a>初始化博客文件夹</h2><p>新建blog文件夹，用于存放博客相关文件，进入该文件在控制台输入 hexo init 进行初始化操作。这里需要提前安装git，安装方法这里就不赘述了。</p><pre class="line-numbers language-none"><code class="language-none">hexo init<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>这里就可以启动 hexo 服务，到这里就算本地部署结束了。可以自行查阅hexo的使用指令，用hexo server指令即可启动服务。在浏览器使用4000端口就可以预览。</p><pre class="line-numbers language-none"><code class="language-none">hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><img src="/2021/09/23/%E5%88%A9%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1.png" class="" loading="lazy"><hr><h1 id="部署到GitHub"><a href="#部署到GitHub" class="headerlink" title="部署到GitHub"></a>部署到GitHub</h1><h2 id="新建github仓库"><a href="#新建github仓库" class="headerlink" title="新建github仓库"></a>新建github仓库</h2><p>新建仓库使用 ”github名字.github.io“ ，我的是 ”MaoMaoBBse.github.io“。</p><img src="/2021/09/23/%E5%88%A9%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93.png" class="" loading="lazy"><h2 id="安装-hexo-deployer-git-插件"><a href="#安装-hexo-deployer-git-插件" class="headerlink" title="安装 hexo-deployer-git 插件"></a>安装 hexo-deployer-git 插件</h2><pre class="line-numbers language-none"><code class="language-none">cnpm install --save hexo-deployer-git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="推送到gitbuh仓库"><a href="#推送到gitbuh仓库" class="headerlink" title="推送到gitbuh仓库"></a>推送到gitbuh仓库</h2><p>到这里就可以使用 “hexo d” 部署到远端了</p><pre class="line-numbers language-none"><code class="language-none">hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><img src="/2021/09/23/%E5%88%A9%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/%E5%AE%8C%E6%88%90%E9%A2%84%E8%A7%88%E5%9B%BE.png" class="" loading="lazy"><p>感谢<a href="https://space.bilibili.com/384068749">CodeSheep</a>的<a href="https://www.bilibili.com/video/BV1Yb411a7ty">自建博客视频</a></p>]]></content>
     
@@ -65,13 +125,13 @@
     <category term="教程" scheme="https://maomaobbse.github.io/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="笔记" scheme="https://maomaobbse.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="教程" scheme="https://maomaobbse.github.io/tags/%E6%95%99%E7%A8%8B/"/>
     
     <category term="流程" scheme="https://maomaobbse.github.io/tags/%E6%B5%81%E7%A8%8B/"/>
     
     <category term="适合萌新" scheme="https://maomaobbse.github.io/tags/%E9%80%82%E5%90%88%E8%90%8C%E6%96%B0/"/>
+    
+    <category term="工具" scheme="https://maomaobbse.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
