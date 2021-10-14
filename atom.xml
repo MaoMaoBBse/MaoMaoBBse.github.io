@@ -6,7 +6,7 @@
   <link href="https://maomaobbse.github.io/atom.xml" rel="self"/>
   
   <link href="https://maomaobbse.github.io/"/>
-  <updated>2021-10-13T16:13:47.074Z</updated>
+  <updated>2021-10-14T17:24:08.630Z</updated>
   <id>https://maomaobbse.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用cmake添加Boost库</title>
+    <link href="https://maomaobbse.github.io/2021/10/15/%E4%BD%BF%E7%94%A8cmake%E6%B7%BB%E5%8A%A0Boost%E5%BA%93/"/>
+    <id>https://maomaobbse.github.io/2021/10/15/%E4%BD%BF%E7%94%A8cmake%E6%B7%BB%E5%8A%A0Boost%E5%BA%93/</id>
+    <published>2021-10-14T16:59:45.000Z</published>
+    <updated>2021-10-14T17:24:08.630Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="添加方法"><a href="#添加方法" class="headerlink" title="添加方法"></a>添加方法</h2><ol><li><p><strong>设置boost的根目录</strong>，这点尤为重要，如果没设置后面会查找失败。 </p><pre class="line-numbers language-cmake" data-language="cmake"><code class="language-cmake">set(BOOST_ROOT &quot;boost path&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li><p>查找</p><pre class="line-numbers language-cmake" data-language="cmake"><code class="language-cmake">find_package(Boost)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li><p>判断是否找到</p><pre class="line-numbers language-cmake" data-language="cmake"><code class="language-cmake">if(Boost_FOUND)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li><p>设置include路径</p><pre class="line-numbers language-cmake" data-language="cmake"><code class="language-cmake">include_directories($&#123;Boost_INCLUDE_DIRS&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li></ol><blockquote><p><a href="https://cmake.org/cmake/help/latest/module/FindBoost.html">官方FindBoost</a></p></blockquote>]]></content>
+    
+    
+    <summary type="html">在使用C++时，难免会使用到boost可是cmake导入第三方库稍微有点麻烦。本篇将告诉你如何利用官方提供方法巧妙的导入boost库。</summary>
+    
+    
+    
+    
+    <category term="C++" scheme="https://maomaobbse.github.io/tags/C/"/>
+    
+    <category term="Cmake" scheme="https://maomaobbse.github.io/tags/Cmake/"/>
+    
+    <category term="Boost" scheme="https://maomaobbse.github.io/tags/Boost/"/>
+    
+    <category term="小技巧" scheme="https://maomaobbse.github.io/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+    
+  </entry>
   
   <entry>
     <title>std::ifstream的成员函数seekg()失效问题</title>
