@@ -6,7 +6,7 @@
   <link href="https://maomaobbse.github.io/atom.xml" rel="self"/>
   
   <link href="https://maomaobbse.github.io/"/>
-  <updated>2021-10-14T17:24:08.630Z</updated>
+  <updated>2021-10-15T17:12:38.685Z</updated>
   <id>https://maomaobbse.github.io/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>C/C++控制打印字符的颜色</title>
+    <link href="https://maomaobbse.github.io/2021/10/16/C-C-%E6%8E%A7%E5%88%B6%E6%89%93%E5%8D%B0%E5%AD%97%E7%AC%A6%E7%9A%84%E9%A2%9C%E8%89%B2/"/>
+    <id>https://maomaobbse.github.io/2021/10/16/C-C-%E6%8E%A7%E5%88%B6%E6%89%93%E5%8D%B0%E5%AD%97%E7%AC%A6%E7%9A%84%E9%A2%9C%E8%89%B2/</id>
+    <published>2021-10-15T16:35:37.000Z</published>
+    <updated>2021-10-15T17:12:38.685Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>转载至<a href="https://blog.csdn.net/lwbeyond/article/details/40588145">原文</a></strong></p></blockquote><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>控制字符的通用格式如下:<br><strong>Esc[{attr1};…;{attrn}m</strong></p><p>其中:<br>Esc 是转义字符, 其值为”\033”;<br>[ 是常量的左中括号;<br>{attr1};…{attrn} 是若干属性, 通常是由一个有特定意义的数字代替, 每个属性之间用分号分隔;<br>m 就是字面常量字符m;</p><h2 id="属性列表"><a href="#属性列表" class="headerlink" title="属性列表"></a>属性列表</h2><ul><li><p><strong>通用格式控制：</strong></p><table><thead><tr><th align="center">编号</th><th align="center">实际作用</th></tr></thead><tbody><tr><td align="center">0</td><td align="center">重置所有属性</td></tr><tr><td align="center">1</td><td align="center">高亮/加粗</td></tr><tr><td align="center">2</td><td align="center">暗淡</td></tr><tr><td align="center">3</td><td align="center">下划线</td></tr><tr><td align="center">4</td><td align="center">闪烁</td></tr><tr><td align="center">5</td><td align="center">反转</td></tr><tr><td align="center">6</td><td align="center">隐藏</td></tr></tbody></table></li><li><p><strong>前景色：</strong></p><table><thead><tr><th align="center">编号</th><th align="center">实际作用</th></tr></thead><tbody><tr><td align="center">30</td><td align="center">黑色</td></tr><tr><td align="center">31</td><td align="center">红色</td></tr><tr><td align="center">32</td><td align="center">绿色</td></tr><tr><td align="center">33</td><td align="center">黄色</td></tr><tr><td align="center">34</td><td align="center">蓝色</td></tr><tr><td align="center">35</td><td align="center">品红</td></tr><tr><td align="center">36</td><td align="center">青色</td></tr><tr><td align="center">37</td><td align="center">白色</td></tr></tbody></table></li><li><p><strong>背景色：</strong></p><table><thead><tr><th align="center">编号</th><th align="center">实际作用</th></tr></thead><tbody><tr><td align="center">40</td><td align="center">黑色</td></tr><tr><td align="center">41</td><td align="center">红色</td></tr><tr><td align="center">42</td><td align="center">绿色</td></tr><tr><td align="center">43</td><td align="center">黄色</td></tr><tr><td align="center">44</td><td align="center">蓝色</td></tr><tr><td align="center">45</td><td align="center">品红</td></tr><tr><td align="center">46</td><td align="center">青色</td></tr><tr><td align="center">47</td><td align="center">白色</td></tr></tbody></table></li></ul><h2 id="例："><a href="#例：" class="headerlink" title="例："></a>例：</h2><p>比如要输出的字体前景为红色：</p><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">std::cout &lt;&lt; &quot;\033[31mThis text is red \033[0mThis text has default color\n&quot;;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>如果同时还要加上黄色的背景：</p><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">std::cout &lt;&lt; &quot;\033[31;43mThis text is red with yellow background \033[0mThis text has default color\n&quot;;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+    
+    
+    <summary type="html">使用C/C++编译调试代码时，为你的终端展示的log信息添上颜色吧。</summary>
+    
+    
+    
+    
+    <category term="C++" scheme="https://maomaobbse.github.io/tags/C/"/>
+    
+    <category term="std" scheme="https://maomaobbse.github.io/tags/std/"/>
+    
+    <category term="小技巧" scheme="https://maomaobbse.github.io/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+    
+    <category term="转载" scheme="https://maomaobbse.github.io/tags/%E8%BD%AC%E8%BD%BD/"/>
+    
+    <category term="C语言" scheme="https://maomaobbse.github.io/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
     <title>使用cmake添加Boost库</title>
     <link href="https://maomaobbse.github.io/2021/10/15/%E4%BD%BF%E7%94%A8cmake%E6%B7%BB%E5%8A%A0Boost%E5%BA%93/"/>
     <id>https://maomaobbse.github.io/2021/10/15/%E4%BD%BF%E7%94%A8cmake%E6%B7%BB%E5%8A%A0Boost%E5%BA%93/</id>
     <published>2021-10-14T16:59:45.000Z</published>
-    <updated>2021-10-14T17:24:08.630Z</updated>
+    <updated>2021-10-15T09:54:50.068Z</updated>
     
     <content type="html"><![CDATA[<h2 id="添加方法"><a href="#添加方法" class="headerlink" title="添加方法"></a>添加方法</h2><ol><li><p><strong>设置boost的根目录</strong>，这点尤为重要，如果没设置后面会查找失败。 </p><pre class="line-numbers language-cmake" data-language="cmake"><code class="language-cmake">set(BOOST_ROOT &quot;boost path&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li><p>查找</p><pre class="line-numbers language-cmake" data-language="cmake"><code class="language-cmake">find_package(Boost)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li><p>判断是否找到</p><pre class="line-numbers language-cmake" data-language="cmake"><code class="language-cmake">if(Boost_FOUND)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li><p>设置include路径</p><pre class="line-numbers language-cmake" data-language="cmake"><code class="language-cmake">include_directories($&#123;Boost_INCLUDE_DIRS&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li></ol><blockquote><p><a href="https://cmake.org/cmake/help/latest/module/FindBoost.html">官方FindBoost</a></p></blockquote>]]></content>
     
