@@ -35,11 +35,11 @@
     
     <category term="std" scheme="https://maomaobbse.github.io/tags/std/"/>
     
-    <category term="小技巧" scheme="https://maomaobbse.github.io/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
-    
     <category term="转载" scheme="https://maomaobbse.github.io/tags/%E8%BD%AC%E8%BD%BD/"/>
     
     <category term="C语言" scheme="https://maomaobbse.github.io/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+    <category term="小技巧" scheme="https://maomaobbse.github.io/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
     
   </entry>
   
@@ -50,7 +50,7 @@
     <published>2021-10-14T16:59:45.000Z</published>
     <updated>2021-10-15T09:54:50.068Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="添加方法"><a href="#添加方法" class="headerlink" title="添加方法"></a>添加方法</h2><ol><li><p><strong>设置boost的根目录</strong>，这点尤为重要，如果没设置后面会查找失败。 </p><pre class="line-numbers language-cmake" data-language="cmake"><code class="language-cmake">set(BOOST_ROOT &quot;boost path&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li><p>查找</p><pre class="line-numbers language-cmake" data-language="cmake"><code class="language-cmake">find_package(Boost)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li><p>判断是否找到</p><pre class="line-numbers language-cmake" data-language="cmake"><code class="language-cmake">if(Boost_FOUND)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li><p>设置include路径</p><pre class="line-numbers language-cmake" data-language="cmake"><code class="language-cmake">include_directories($&#123;Boost_INCLUDE_DIRS&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li></ol><blockquote><p><a href="https://cmake.org/cmake/help/latest/module/FindBoost.html">官方FindBoost</a></p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h2 id="添加方法"><a href="#添加方法" class="headerlink" title="添加方法"></a>添加方法</h2><ol><li><p><strong>设置boost的根目录</strong>，这点尤为重要，如果没设置后面会查找失败。 </p><pre class="line-numbers language-cmake" data-language="cmake"><code class="language-cmake"><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token variable">BOOST_ROOT</span> <span class="token string">"boost path"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li><p>查找</p><pre class="line-numbers language-cmake" data-language="cmake"><code class="language-cmake"><span class="token keyword">find_package</span><span class="token punctuation">(</span>Boost<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li><p>判断是否找到</p><pre class="line-numbers language-cmake" data-language="cmake"><code class="language-cmake"><span class="token keyword">if</span><span class="token punctuation">(</span>Boost_FOUND<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li><p>设置include路径</p><pre class="line-numbers language-cmake" data-language="cmake"><code class="language-cmake"><span class="token keyword">include_directories</span><span class="token punctuation">(</span><span class="token punctuation">$&#123;</span>Boost_INCLUDE_DIRS<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li></ol><blockquote><p><a href="https://cmake.org/cmake/help/latest/module/FindBoost.html">官方FindBoost</a></p></blockquote>]]></content>
     
     
     <summary type="html">在使用C++时，难免会使用到boost可是cmake导入第三方库稍微有点麻烦。本篇将告诉你如何利用官方提供方法巧妙的导入boost库。</summary>
@@ -60,11 +60,11 @@
     
     <category term="C++" scheme="https://maomaobbse.github.io/tags/C/"/>
     
+    <category term="小技巧" scheme="https://maomaobbse.github.io/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+    
     <category term="Cmake" scheme="https://maomaobbse.github.io/tags/Cmake/"/>
     
     <category term="Boost" scheme="https://maomaobbse.github.io/tags/Boost/"/>
-    
-    <category term="小技巧" scheme="https://maomaobbse.github.io/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
     
   </entry>
   
@@ -88,11 +88,11 @@
     <category term="笔记" scheme="https://maomaobbse.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="笔记" scheme="https://maomaobbse.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="C++" scheme="https://maomaobbse.github.io/tags/C/"/>
     
     <category term="std" scheme="https://maomaobbse.github.io/tags/std/"/>
+    
+    <category term="笔记" scheme="https://maomaobbse.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
     <category term="坑" scheme="https://maomaobbse.github.io/tags/%E5%9D%91/"/>
     
@@ -118,11 +118,11 @@
     <category term="笔记" scheme="https://maomaobbse.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="笔记" scheme="https://maomaobbse.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="C++" scheme="https://maomaobbse.github.io/tags/C/"/>
     
     <category term="std" scheme="https://maomaobbse.github.io/tags/std/"/>
+    
+    <category term="笔记" scheme="https://maomaobbse.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
