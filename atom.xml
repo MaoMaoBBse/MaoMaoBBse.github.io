@@ -6,7 +6,7 @@
   <link href="https://maomaobbse.github.io/atom.xml" rel="self"/>
   
   <link href="https://maomaobbse.github.io/"/>
-  <updated>2021-10-18T12:57:14.711Z</updated>
+  <updated>2021-10-26T01:37:49.553Z</updated>
   <id>https://maomaobbse.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>写出规范化的高可读性的函数代码注释</title>
+    <link href="https://maomaobbse.github.io/2021/10/26/%E5%86%99%E5%87%BA%E8%A7%84%E8%8C%83%E5%8C%96%E7%9A%84%E9%AB%98%E5%8F%AF%E8%AF%BB%E6%80%A7%E7%9A%84%E5%87%BD%E6%95%B0%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A/"/>
+    <id>https://maomaobbse.github.io/2021/10/26/%E5%86%99%E5%87%BA%E8%A7%84%E8%8C%83%E5%8C%96%E7%9A%84%E9%AB%98%E5%8F%AF%E8%AF%BB%E6%80%A7%E7%9A%84%E5%87%BD%E6%95%B0%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A/</id>
+    <published>2021-10-26T01:34:56.000Z</published>
+    <updated>2021-10-26T01:37:49.553Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p><a href="https://www.cnblogs.com/piaobodewu/p/9348372.html">原文</a></p></blockquote><h2 id="对代码接触的越多，我越来越想让写出的代码更加perfect，更加高可读性，其中各个函数的代码注释就是非常关键的一步："><a href="#对代码接触的越多，我越来越想让写出的代码更加perfect，更加高可读性，其中各个函数的代码注释就是非常关键的一步：" class="headerlink" title="对代码接触的越多，我越来越想让写出的代码更加perfect，更加高可读性，其中各个函数的代码注释就是非常关键的一步："></a>对代码接触的越多，我越来越想让写出的代码更加perfect，更加高可读性，其中各个函数的代码注释就是非常关键的一步：</h2><pre class="language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">/** * 函数功能 * @name 名字 * @abstract 申明变量/类/方法 * @access 指明这个变量、类、函数/方法的存取权限 * @author 函数作者的名字和邮箱地址 * @category  组织packages * @copyright 指明版权信息 * @const 指明常量 * @deprecate 指明不推荐或者是废弃的信息MyEclipse编码设置 * @example 示例 * @exclude 指明当前的注释将不进行分析，不出现在文挡中 * @final 指明这是一个最终的类、方法、属性，禁止派生、修改。 * @global 指明在此函数中引用的全局变量 * @include 指明包含的文件的信息 * @link 定义在线连接 * @module 定义归属的模块信息 * @modulegroup 定义归属的模块组 * @package 定义归属的包的信息 * @param 定义函数或者方法的参数信息 * @return 定义函数或者方法的返回信息 * @see 定义需要参考的函数、变量，并加入相应的超级连接。 * @since 指明该api函数或者方法是从哪个版本开始引入的 * @static 指明变量、类、函数是静态的。 * @throws 指明此函数可能抛出的错误异常,极其发生的情况 * @var 定义说明变量/属性。 * @version 定义版本信息 */</span></code></pre>]]></content>
+    
+    
+    <summary type="html">对代码接触的越多，我越来越想让写出的代码更加perfect，更加高可读性，其中各个函数的代码注释就是非常关键的一步。</summary>
+    
+    
+    
+    
+    <category term="转载" scheme="https://maomaobbse.github.io/tags/%E8%BD%AC%E8%BD%BD/"/>
+    
+    <category term="注释" scheme="https://maomaobbse.github.io/tags/%E6%B3%A8%E9%87%8A/"/>
+    
+  </entry>
   
   <entry>
     <title>git常用命令</title>
