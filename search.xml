@@ -12,18 +12,6 @@
       </tags>
   </entry>
   <entry>
-    <title>C/C++控制打印字符的颜色</title>
-    <url>/2021/10/16/C-C-%E6%8E%A7%E5%88%B6%E6%89%93%E5%8D%B0%E5%AD%97%E7%AC%A6%E7%9A%84%E9%A2%9C%E8%89%B2/</url>
-    <content><![CDATA[]]></content>
-      <tags>
-        <tag>转载</tag>
-        <tag>C语言</tag>
-        <tag>C++</tag>
-        <tag>std</tag>
-        <tag>小技巧</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>C++17 std::any 的使用方法</title>
     <url>/2021/10/12/C-17-std-any-%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[]]></content>
@@ -34,6 +22,31 @@
         <tag>C++</tag>
         <tag>std</tag>
         <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C/C++控制打印字符的颜色</title>
+    <url>/2021/10/16/C-C-%E6%8E%A7%E5%88%B6%E6%89%93%E5%8D%B0%E5%AD%97%E7%AC%A6%E7%9A%84%E9%A2%9C%E8%89%B2/</url>
+    <content><![CDATA[]]></content>
+      <tags>
+        <tag>C++</tag>
+        <tag>std</tag>
+        <tag>转载</tag>
+        <tag>C语言</tag>
+        <tag>小技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git常用命令</title>
+    <url>/2021/10/18/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>git</tag>
+        <tag>常用</tag>
       </tags>
   </entry>
   <entry>
@@ -65,16 +78,14 @@
       </tags>
   </entry>
   <entry>
-    <title>git常用命令</title>
-    <url>/2021/10/18/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <title>使用cmake添加Boost库</title>
+    <url>/2021/10/15/%E4%BD%BF%E7%94%A8cmake%E6%B7%BB%E5%8A%A0Boost%E5%BA%93/</url>
     <content><![CDATA[]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
       <tags>
-        <tag>笔记</tag>
-        <tag>git</tag>
-        <tag>常用</tag>
+        <tag>C++</tag>
+        <tag>小技巧</tag>
+        <tag>Cmake</tag>
+        <tag>Boost</tag>
       </tags>
   </entry>
   <entry>
@@ -84,17 +95,6 @@
       <tags>
         <tag>转载</tag>
         <tag>注释</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用cmake添加Boost库</title>
-    <url>/2021/10/15/%E4%BD%BF%E7%94%A8cmake%E6%B7%BB%E5%8A%A0Boost%E5%BA%93/</url>
-    <content><![CDATA[]]></content>
-      <tags>
-        <tag>C++</tag>
-        <tag>小技巧</tag>
-        <tag>Cmake</tag>
-        <tag>Boost</tag>
       </tags>
   </entry>
   <entry>
